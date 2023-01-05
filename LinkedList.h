@@ -2,12 +2,15 @@
 #include "LinkedListNode.h"
 #include <iostream>
 
+using namespace std;
 class LinkedList{
     public:
     LinkedList();
-    private:
     LinkedListNode* Head;
-    friend std::ostream& operator <<(std::ostream& ost, LinkedList& rhs);
+    friend ostream& operator <<(ostream& ost, LinkedList& rhs);
     void pushBack(int);
+    void popBack();
+    double Front();
+    double Back();
 
 };
