@@ -75,5 +75,46 @@ void LinkedList::popBack()
             Current = Current->Next;
         }
         Current->Prev->Next = nullptr;
+        delete Current;
+    }
+}
+
+double LinkedList::Front(){
+    if(Head==nullptr){
+        throw std::out_of_range("The list is empty");
+    }
+
+    return Head->Data;
+}
+
+
+double LinkedList::Back(){
+    if(Head==nullptr){
+        throw std::out_of_range("The list is empty");
+    }
+
+    LinkedListNode* Current = Head;
+    while(Current->Next != nullptr){
+        std::cout<<Current->Data<<" ";
+        Current = Current->Next;
+    }
+    return Current->Data;
+}
+
+void LinkedList::Clear(){
+    LinkedListNode* Current = Head;
+    while(Current!=nullptr){
+        LinkedListNode* Temp = Current->Next;
+        delete Current;
+        Current = Temp;
+    }
+    Head = nullptr;
+}
+
+bool LinkedList::isEmpty(){
+    if(Head==nullptr){
+        return true;
+    }else{
+        return false;
     }
 }

@@ -12,5 +12,7 @@ class LinkedList{
     void popBack();
     double Front();
     double Back();
+    void Clear();
+    bool isEmpty();
 
 };
